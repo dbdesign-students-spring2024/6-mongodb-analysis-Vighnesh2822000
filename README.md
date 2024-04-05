@@ -16,7 +16,9 @@ Data set details:
 ## Analysis:
 
   1. - show exactly two documents from the `listings` collection in any order
+  ```
      - db.listings.find().limit(2)
+  ```
 ```   
    [
   {
