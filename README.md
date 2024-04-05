@@ -424,7 +424,6 @@ Data set details:
     reviews_per_month: 2.6
   },
 ```
-  - 
 3. - choose two hosts (by reffering to their `host_id` values) who are superhosts (available in the `host_is_superhost` field), and show all of the listings offered by both of the two hosts
 - db.listings.find({$or:[{host_id: 5926852},{host_id: 8761644}], host_is_superhost: "t"},{name:1, _id:0, price:1, neighbourhood: 1, host_name:1, host_is_superhost:1})
 ```
@@ -451,7 +450,7 @@ Data set details:
     price: '$323.00'
   },
 ```
-  - 
+  - Both these superhosts have their footprint in the Noosa Heads neighbourhood
    
 4. - find all the unique `host_name` values
    - db.listings.distinct("host_name")
@@ -466,7 +465,6 @@ Data set details:
   'Abi',
   'Abizer',
 ```
-  - 
   
 5. - find all of the places that have more than 2 `beds` in a neighborhood of your choice (referred to as either the `neighborhood` or `neighbourhood_group_cleansed` fields in the data file), ordered by `review_scores_rating` descending
    - db.listings.find({neighbourhood_group_cleansed: "Noosa", beds: {$gte :2}, review_scores_rating: {$ne:''}},{name:1, _id:0, beds:1, review_scores_rating:1, price:1}).sort({"review_scores_rating":-1}).pretty()
@@ -491,7 +489,7 @@ Data set details:
     review_scores_rating: 5
   },
 ```
-  - 
+  - A lot of 5 star reviews! Almost Surf Side! - Little Cove & National Park, gives a less pricey option for 4 beds with great reivews.
 
 6. - show the number of listings per host
    - db.listings.aggregate([{$group:{_id: "$host_name", listingcount :{$sum: 1}}}]).pretty().sort({listingcount: -1})
@@ -502,10 +500,10 @@ Data set details:
   { _id: 'Aspire Property Management', listingcount: 94 },
   { _id: 'Melanie And Verena', listingcount: 88 },
 ```
-  - 
+  - Niche Holidays is the biggest business in Sunshine Coast when it comes to Airbnb! 
 
 7. - find the average `review_scores_rating` per neighborhood, and only show those that are `4` or above, sorted in descending order of rating (see [the docs](https://docs.mongodb.com/manual/reference/operator/aggregation/sort/))
-   - db.listings.aggregate([{$group:{_id: "$neighbourhood_cleansed", average_rating: {$avg: "$review_scores_rating"}}}, {$project: {name:1, average_rating: 1}}, {$sort: {average_rating: -1}}])
+   - db.listings.aggregate([{$group:{_id: "$neighbourhood_cleansed", average_rating: {$avg: "$review_scores_rating"}}}, {$sort: {average_rating: -1}}])
 ```
  [
   { _id: 'Glass House Mountains', average_rating: 4.908695652173913 },
@@ -515,5 +513,5 @@ Data set details:
   { _id: 'Peregian Springs', average_rating: 4.897659574468085 },
   { _id: 'Noosa Hinterland', average_rating: 4.891152416356878 },
 ```
-  - 
+  - Glass House Mountains neighbourhood has a lot of great options, with rave reviews!!
 
