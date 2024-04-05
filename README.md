@@ -17,8 +17,9 @@ Data set details:
 ## Analysis:
 
   1. - show exactly two documents from the `listings` collection in any order
-   - db.listings.find().limit(2)
-   - [
+     - db.listings.find().limit(2)
+```   
+   [
   {
     _id: ObjectId('660dfa89b6515eb205796364'),
     id: 300526,
@@ -177,7 +178,8 @@ Data set details:
     reviews_per_month: 0.32
   }
 ]
-   
+```
+ 
 2. - show exactly 10 documents in any order, but "prettyprint" in easier to read format, using the `pretty()` function.
    - db.listings.find().pretty().limit(10)
 ```   [
