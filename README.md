@@ -517,7 +517,7 @@ db.listings.aggregate([{$group:{_id: "$host_name", listingcount :{$sum: 1}}}]).p
 
 7. - find the average `review_scores_rating` per neighborhood, and only show those that are `4` or above, sorted in descending order of rating (see [the docs](https://docs.mongodb.com/manual/reference/operator/aggregation/sort/))
 ```
-db.listings.aggregate([{$group:{_id: "$neighbourhood_cleansed", average_rating: {$avg: "$review_scores_rating"}}}, {$sort: {average_rating: -1}}])
+db.listings.aggregate([{$group:{_id: "$neighbourhood_cleansed", average_rating: {$avg: "$review_scores_rating"}}},{$match:{average_rating:{$gte: 4}}}, {$sort: {average_rating: -1}}])
 ```
 ```
  [
