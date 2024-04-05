@@ -180,8 +180,7 @@ Data set details:
    
 2. - show exactly 10 documents in any order, but "prettyprint" in easier to read format, using the `pretty()` function.
    - db.listings.find().pretty().limit(10)
-   ```
-   [
+   ```   [
   {
     _id: ObjectId('660dfa89b6515eb205796364'),
     id: 300526,
