@@ -8,8 +8,7 @@ Data set details:
 - The data I use in this assignment was taken from Inside Airbnb, which is an investigatory website releasing data on Airbnb listings in various cities.[Sunshine Coast, Queensland, Australia](https://data.insideairbnb.com/australia/qld/sunshine-coast/2024-02-29/data/listings.csv.gz)
 - The original data was in a `csv` file compressed with `gzip` compressino.
 - Sample data - I'm inserting an image because formatting the first 20 rows using markdown will be a waste of time
-- ![sample data](data\Screenshot 2024-04-05 095637.png)
-
+ [sample data](data/Screenshot%202024-04-05%20095637.png)
 
 - There were some datas missing from the 'neighbourhood', 'first_review', 'host_reponse_time', 'host_response_rate', 'host_acceptance_rate', some review_score_rating fields and 'last review' fields, but none of fields are used in this analysis. The 'neighbouthood_cleansed' field has the necessary detail to find the neighbourhood of the listing.Other fields have a reson to be empty. I have chosen to leave the documents for which we dont have review_score_ratings as it is, because those data's are useful in knowing the number of listings. And in the query that deals with the review ratings, i have chosen to omit those documents.   
 
