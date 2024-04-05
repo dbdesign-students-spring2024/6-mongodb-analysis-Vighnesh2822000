@@ -180,7 +180,7 @@ Data set details:
    
 2. - show exactly 10 documents in any order, but "prettyprint" in easier to read format, using the `pretty()` function.
    - db.listings.find().pretty().limit(10)
-   ```   [
+```   [
   {
     _id: ObjectId('660dfa89b6515eb205796364'),
     id: 300526,
@@ -423,7 +423,7 @@ Data set details:
     calculated_host_listings_count_shared_rooms: 0,
     reviews_per_month: 2.6
   },
-  ```
+```
   - 
 3. - choose two hosts (by reffering to their `host_id` values) who are superhosts (available in the `host_is_superhost` field), and show all of the listings offered by both of the two hosts
 - db.listings.find({$or:[{host_id: 5926852},{host_id: 8761644}], host_is_superhost: "t"},{name:1, _id:0, price:1, neighbourhood: 1, host_name:1, host_is_superhost:1})
@@ -450,12 +450,13 @@ Data set details:
     neighbourhood: 'Noosa Heads, Queensland, Australia',
     price: '$323.00'
   },
-  ```
+```
   - 
    
 4. - find all the unique `host_name` values
    - db.listings.distinct("host_name")
-   - [
+```
+[
   'A',
   'A S Coastal',
   'AJ & Nethmie',
@@ -464,7 +465,7 @@ Data set details:
   'Abby-Rose',
   'Abi',
   'Abizer',
-  ```
+```
   - 
   
 5. - find all of the places that have more than 2 `beds` in a neighborhood of your choice (referred to as either the `neighborhood` or `neighbourhood_group_cleansed` fields in the data file), ordered by `review_scores_rating` descending
@@ -489,7 +490,7 @@ Data set details:
     price: '$536.00',
     review_scores_rating: 5
   },
-  ```
+```
   - 
 
 6. - show the number of listings per host
@@ -500,7 +501,7 @@ Data set details:
   { _id: 'Accom Caloundra', listingcount: 108 },
   { _id: 'Aspire Property Management', listingcount: 94 },
   { _id: 'Melanie And Verena', listingcount: 88 },
-  ```
+```
   - 
 
 7. - find the average `review_scores_rating` per neighborhood, and only show those that are `4` or above, sorted in descending order of rating (see [the docs](https://docs.mongodb.com/manual/reference/operator/aggregation/sort/))
@@ -513,6 +514,6 @@ Data set details:
   { _id: 'Diddillibah - Rosemount', average_rating: 4.898333333333333 },
   { _id: 'Peregian Springs', average_rating: 4.897659574468085 },
   { _id: 'Noosa Hinterland', average_rating: 4.891152416356878 },
-  ```
+```
   - 
 
